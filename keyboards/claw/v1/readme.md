@@ -26,5 +26,7 @@ qmk compile -kb <keyboard> -km default
 qmk compile -kb claw/v1 -km default
 qmk compile -kb claw/v1/f411 -km default
 
-rm .build/*.bin ; make claw/v1/f411 && cp .build/claw_*.bin /mnt/c/Users/john/Downloads/
-rm .build/*.bin ; make claw/v2 && cp .build/claw_*.bin /mnt/c/Users/john/Downloads/
+rm .build/*.bin ; qmk compile -kb claw/v1/f411 -km default && cp .build/claw_*.bin /mnt/c/Users/john/Downloads/
+
+** TODO: fully define cpu pins for full matrix
+** TODO: add joystick button. ? To matrix?

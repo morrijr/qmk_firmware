@@ -1,16 +1,16 @@
 #pragma once
 
 /* USB Device descriptor parameter */
-#define VENDOR_ID       0xFEED
-#define PRODUCT_ID      0x6465
-#define DEVICE_VER      0x0001
-#define MANUFACTURER    none
-#define PRODUCT         onekey
-#define DESCRIPTION     test board for qmk
+#define VENDOR_ID 0xFEED
+#define PRODUCT_ID 0x6465
+#define DEVICE_VER 0x0001
+#define MANUFACTURER Morrijr
+#define PRODUCT Claw
+#define DESCRIPTION Claw gamepad
 
 /* key matrix size */
-#define MATRIX_ROWS 1
-#define MATRIX_COLS 1
+#define MATRIX_ROWS 3
+#define MATRIX_COLS 4
 
 #define DIODE_DIRECTION COL2ROW
 
@@ -18,7 +18,7 @@
 //#define MATRIX_HAS_GHOST
 
 /* Set 0 if debouncing isn't needed */
-#define DEBOUNCE    5
+#define DEBOUNCE 5
 
 #define TAPPING_TERM 500
 
