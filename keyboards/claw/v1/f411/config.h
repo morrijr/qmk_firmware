@@ -22,10 +22,5 @@
 #define MATRIX_ROW_PINS { A7 }
 #define UNUSED_PINS
 
-#define BACKLIGHT_PIN           A0
-#define BACKLIGHT_PWM_DRIVER    PWMD5
-#define BACKLIGHT_PWM_CHANNEL   1
-
-#define RGB_DI_PIN A1
-
-#define ADC_PIN A0
+#define JOYSTICK_X_PIN A0
+#define JOYSTICK_Y_PIN A0
