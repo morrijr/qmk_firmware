@@ -17,6 +17,10 @@
 /* define if matrix has ghost */
 //#define MATRIX_HAS_GHOST
 
+#define JOYSTICK_AXES_COUNT 2
+#define JOYSTICK_BUTTON_COUNT 1
+#define DIP_SWITCH_PINS { JOYSTICK_BUTTON }
+
 /* Set 0 if debouncing isn't needed */
 #define DEBOUNCE 5
 
