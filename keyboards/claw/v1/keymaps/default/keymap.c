@@ -4,27 +4,23 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     LAYOUT(
-        KC_Q, KC_W, KC_E, KC_R,
-        KC_A, KC_S, KC_D, KC_F,
-        KC_Z, KC_X, KC_C, KC_V
+        JS_BUTTON0, JS_BUTTON3, JS_BUTTON6, JS_BUTTON9,
+        JS_BUTTON1, JS_BUTTON4, JS_BUTTON7, JS_BUTTON10,
+        JS_BUTTON2, JS_BUTTON5, JS_BUTTON8, JS_BUTTON11
     )
 };
 
-// const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {LAYOUT_ortho_1x1(JS_BUTTON0)};
-
 void dip_switch_update_user(uint8_t index, bool active) {
     switch (index) {
-        case 0:  // ENC0_SW
+        case 0:  // JS_BUTTON12
             if (active) {
-                // tap_code(JS_BUTTON0);
-                tap_code(KC_M);
+                joystick_status.buttons[(JS_BUTTON12 - JS_BUTTON0) / 8] |= 1 << (JS_BUTTON12 % 8);
             } else {
-                // do nothing
+                joystick_status.buttons[(JS_BUTTON12 - JS_BUTTON0) / 8] &= ~(1 << (JS_BUTTON12 % 8));
             }
+            joystick_status.status |= JS_UPDATED;
             break;
     }
 }
 
-joystick_config_t joystick_axes[JOYSTICK_AXES_COUNT] = {
-    [0] = JOYSTICK_AXIS_IN(JOYSTICK_X_PIN, JOYSTICK_MIN, JOYSTICK_CENTER, JOYSTICK_MAX),
-    [1] = JOYSTICK_AXIS_IN(JOYSTICK_Y_PIN, JOYSTICK_MIN, JOYSTICK_CENTER, JOYSTICK_MAX)};
+joystick_config_t joystick_axes[JOYSTICK_AXES_COUNT] = {[0] = JOYSTICK_AXIS_IN(JOYSTICK_X_PIN, JOYSTICK_MIN, JOYSTICK_CENTER, JOYSTICK_MAX), [1] = JOYSTICK_AXIS_IN(JOYSTICK_Y_PIN, JOYSTICK_MIN, JOYSTICK_CENTER, JOYSTICK_MAX)};
